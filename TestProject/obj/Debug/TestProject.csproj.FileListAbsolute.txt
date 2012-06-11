@@ -9,14 +9,3 @@ C:\Users\xps\Desktop\NHibernateTest\TestProject\bin\Debug\NHibernate.dll
 C:\Users\xps\Desktop\NHibernateTest\TestProject\bin\Debug\Iesi.Collections.dll
 C:\Users\xps\Desktop\NHibernateTest\TestProject\bin\Debug\Antlr3.Runtime.dll
 C:\Users\xps\Desktop\NHibernateTest\TestProject\bin\Debug\log4net.dll
-C:\Users\xps\mobilesystem\TestProject\bin\Debug\TestProject.dll
-C:\Users\xps\mobilesystem\TestProject\bin\Debug\TestProject.pdb
-C:\Users\xps\mobilesystem\TestProject\bin\Debug\Test.Model.dll
-C:\Users\xps\mobilesystem\TestProject\bin\Debug\NHibernate.dll
-C:\Users\xps\mobilesystem\TestProject\bin\Debug\Iesi.Collections.dll
-C:\Users\xps\mobilesystem\TestProject\bin\Debug\Antlr3.Runtime.dll
-C:\Users\xps\mobilesystem\TestProject\bin\Debug\log4net.dll
-C:\Users\xps\mobilesystem\TestProject\bin\Debug\Test.Model.pdb
-C:\Users\xps\mobilesystem\TestProject\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\xps\mobilesystem\TestProject\obj\Debug\TestProject.dll
-C:\Users\xps\mobilesystem\TestProject\obj\Debug\TestProject.pdb

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Test.Model.Customer, Test.Model" table="t_customer">
+    <id name="Customerid" type="Int32" unsaved-value="null">
+      <column name="t_customerid" sql-type="int" not-null="true" unique="true" index="PK_Customer"/>
+      <generator class="native" />
+    </id>
+    <property name="Name" type="string">
+      <column name="t_name" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Address" type="string">
+      <column name="t_address" sql-type="varchar" not-null="false"/>
+    </property>
+    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Test.Model.CallRecord, Test.Model" table="t_CallRecord">
+    <id name="Id" type="Int32" unsaved-value="null">
+      <column name="t_Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_Phone"/>
+      <generator class="native" />
+    </id>
+    <property name="FPhoneNumber" type="Int64">
+      <column name="f_PhoneNumber" length="11" sql-type="bigint" not-null="false"/>
+    </property>
+
+    <property name="TPhoneNumber" type="Int64">
+      <column name="t_PhoneNumber" length="11" sql-type="bigint" not-null="false"/>
+    </property>
+    <property name="T_from" type="DateTime">
+      <column name="t_from" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="T_to" type="DateTime">
+      <column name="t_to" sql-type="datetime" not-null="false"/>
+    </property>
+    
+  </class>
+</hibernate-mapping>

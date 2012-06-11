@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Test.Model.Mobile, Test.Model" table="t_mobile">
+    <id name="Id" type="Int32" unsaved-value="null">
+      <column name="t_Id" length="10" sql-type="int" not-null="true" unique="true" index="Pk_Mobile"/>
+      <generator class="native" />
+    </id>
+    <property name="Mobilenumber" type="Int64">
+      <column name="t_mobilenumber" length="11" sql-type="bigint" not-null="false"/>
+    </property>
+    <property name="DateTimeOfMakeCard" type="DateTime">
+      <column name="t_DateTimeOfMakeCard" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="Balance" type="float">
+      <column name="t_Balance" sql-type="float" not-null="false"/>
+    </property>
+    <property name="State" type="String">
+      <column name="t_State" sql-type="varchar" length="20" not-null="false"/>
+    </property>
+    <property name="Mobiletype" type="String">
+      <column name="t_mobiletype" sql-type="varchar" length="20" not-null="false"/>
+    </property>
+    <property name="Password" type="String">
+      <column name="t_Password" sql-type="varchar" length="20" not-null="false"/>
+    </property>
+    <property name="LastTimePayFor" type="DateTime">
+      <column name="t_lastTimePayFor" sql-type="datetime" not-null="false"/>
+    </property>
+    
+  </class>
+</hibernate-mapping>

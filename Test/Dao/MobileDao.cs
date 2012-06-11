@@ -21,12 +21,36 @@ namespace Test.Model.Dao
         //检查手机号码是否已经存在
         public bool checknumexists(Int64 num)
         {
-            return false;
+            trans = session.BeginTransaction();
+            try
+            {
+                var hql = @"from Mobile p
+                            where p.Mobilenumber=:mobileNumber";
+                Mobile p = session.CreateQuery(hql)
+                   .SetString("mobileNumber", num.ToString())
+                   .UniqueResult<Mobile>();
+                if (p == null) return true;
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         //保存用户mobile信息
         public bool save(Mobile mobile)
         {
-            return true;
+            trans = session.BeginTransaction();
+            try
+            {
+                session.Save(mobile);
+                trans.Commit();
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
         }
         //获取用户mobile信息
         public Mobile getMobile(Int64 num)
@@ -49,7 +73,17 @@ namespace Test.Model.Dao
         //检查用户余额是否足够
         public bool checkBalance(Int64 num, Int32 chargepermonth)
         {
-            return true;
+            trans = session.BeginTransaction();
+            try
+            {
+                float balance = session.CreateQuery("select Balance from Mobile as c where c.Mobilenumber='" + num + "'").UniqueResult<float>();
+                if (balance >= chargepermonth) return true;
+                else return false;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
         }
         //重载checkBalance方法
         public bool checkBalance(Int64 num, float least)
@@ -146,7 +180,24 @@ namespace Test.Model.Dao
         //检查用户手机状态(on:正常使用,off:欠费,stop:停机状态)
         public bool checkState(Int64 num)
         {
-            return true;
+            trans = session.BeginTransaction();
+            try
+            {
+                var hql = @"from Mobile p
+                            where p.Mobilenumber=:phoneNumber";
+                Mobile p = session.CreateQuery(hql)
+                    .SetString("phoneNumber", num.ToString())
+                    .UniqueResult<Mobile>();
+                if (p.State == "stop")
+                    return true;
+                else if (p.State == "off")
+                    return true;
+                else return false;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
         }
 
         public void changeState(Int64 num)

@@ -83,7 +83,9 @@
     <Compile Include="Dao\AccountDao.cs" />
     <Compile Include="Dao\CallRecordDao.cs" />
     <Compile Include="Dao\ChargeDao.cs" />
+    <Compile Include="Dao\ComplainDao.cs" />
     <Compile Include="Dao\CustomerDao.cs" />
+    <Compile Include="Dao\GradeDao.cs" />
     <Compile Include="Dao\MainDao.cs" />
     <Compile Include="Dao\MobileDao.cs" />
     <Compile Include="Dao\RuleDao.cs" />
@@ -91,7 +93,9 @@
     <Compile Include="model\Account.cs" />
     <Compile Include="model\CallRecord.cs" />
     <Compile Include="model\Charge.cs" />
+    <Compile Include="model\Complain.cs" />
     <Compile Include="model\Customer.cs" />
+    <Compile Include="model\Grade.cs" />
     <Compile Include="model\Mobile.cs" />
     <Compile Include="model\Rule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +132,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Charge.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Grade.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Complain.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

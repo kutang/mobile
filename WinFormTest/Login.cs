@@ -40,5 +40,10 @@ namespace WinFormTest
         {
             textBox1.Text = "";
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

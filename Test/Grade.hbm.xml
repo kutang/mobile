@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Test.Model.Grade, Test.Model" table="t_grade">
+    <id name="Id" type="Int32" unsaved-value="null">
+      <column name="t_id" sql-type="int" not-null="true" unique="true" index="Pk_Grade"/>
+      <generator class="native" />
+    </id>
+    <property name="Level" type="Int32">
+      <column name="t_level" sql-type="int32" not-null="false"/> 
+    </property>
+    <property name="Dtime" type="DateTime">
+      <column name="t_dtime" sql-type="datetime" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

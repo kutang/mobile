@@ -139,6 +139,30 @@ namespace Test.Model.Dao
                 throw new Exception();
             }
         }
+        //基本扣费
+        public void koufei(Int64 num, Int32 chargepermonth,int type)
+        {
+            trans = session.BeginTransaction();
+            try
+            {
+                var hql = @"from Mobile p
+                            where p.Mobilenumber=:phoneNumber";
+                Mobile p = session.CreateQuery(hql)
+                   .SetString("phoneNumber", num.ToString())
+                   .UniqueResult<Mobile>();
+                //扣费
+                p.Balance = p.Balance - chargepermonth;
+                //修改扣费日期,下一次扣费将要在下一个月进行
+                p.LastTimePayFor = DateTime.Now;
+                //更新数据,提交修改后的内容
+                session.Update(p);
+                trans.Commit();
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
         //检查用户密码(停机办理过程需要用到)
         public string getPassword(Int64 num)
         {

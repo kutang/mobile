@@ -35,7 +35,7 @@ namespace WinFormTest
                 richTextBox1.AppendText("1" + "\t");
                 richTextBox1.AppendText(c.Dtime.ToString() + "\t");
                 richTextBox1.AppendText(c.Message + "\n");
-                richTextBox1.AppendText("--------------------------------------------------------------------------");
+                richTextBox1.AppendText("--------------------------------------------------------------------------\n");
             }
         }
 

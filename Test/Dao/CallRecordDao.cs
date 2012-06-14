@@ -70,5 +70,35 @@ namespace Test.Model.Dao
                 throw new Exception();
             }
         }
+        public Int32 checkMobile(Int64 num,Int64 mobile)
+        {
+            trans = session.BeginTransaction();
+            try
+            {
+                var hql = @"from CallRecord c
+                            where c.FPhoneNumber=:number";
+                IEnumerable<CallRecord> ie=session.CreateQuery(hql)
+                    .SetString("number", num.ToString())
+                    .List<CallRecord>();
+                Int32 flag = 0;
+                Int32 month=DateTime.Now.Month;
+                foreach (CallRecord call in ie)
+                {
+                    if (call.T_from.Month >= month - 2 && call.T_from.Month <= month)
+                    {
+                        if (mobile == call.TPhoneNumber)
+                        {
+                            flag = 1;
+                            break;
+                        }
+                    }
+                }
+                return flag;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
     }
 }

@@ -24,10 +24,10 @@ namespace WinFormTest
             {
                 if (textBox1.Text == "root")
                 {
-                    SessionTransport.phonenumber=this.textBox1.Text;
-                    //MainFrame mainFrame = new MainFrame();
-                    //this.Visible = false;
-                    //mainFrame.Show();
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                    button5.Enabled = true;
+                    button6.Enabled = true;
                 }
                 else
                 {
@@ -43,7 +43,34 @@ namespace WinFormTest
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form3 f = new Form3();
+            f.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form6 f = new Form6();
+            f.Show();
         }
     }
 }

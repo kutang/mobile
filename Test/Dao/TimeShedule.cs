@@ -12,7 +12,7 @@ namespace Test.Model
             DateTime dt = DateTime.Now;
             DateTime dt1 = Convert.ToDateTime(dt.ToString());
             DateTime dt2 = Convert.ToDateTime(time.ToString());
-            TimeSpan span = dt2.Subtract(dt1);
+            TimeSpan span = dt1.Subtract(dt2);
             int dayDiff = span.Days + 1;
             
             int year = DateTime.Now.Year;
@@ -49,11 +49,8 @@ namespace Test.Model
                 case 12:
                 default :
                     if (dayDiff == 31) return true;
-                    else return false;
-                
-            }
-            
-            
+                    else return false;        
+            }        
         }
     }
 }

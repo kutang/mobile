@@ -40,6 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -58,9 +61,6 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -117,6 +117,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "确认";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox5
             // 
@@ -194,6 +195,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "设置新密码:";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(44, 94);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(76, 25);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "检查验证码";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(217, 55);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(157, 21);
+            this.textBox7.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 12);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "输入刚才收到的验证码";
+            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(217, 11);
@@ -209,6 +236,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "保存";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
@@ -369,31 +397,6 @@
             this.label8.Size = new System.Drawing.Size(83, 12);
             this.label8.TabIndex = 0;
             this.label8.Text = "服务态度评分:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 55);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 12);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "输入刚才收到的验证码";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(217, 55);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(157, 21);
-            this.textBox7.TabIndex = 8;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(44, 94);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(76, 25);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "检查验证码";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 

@@ -176,5 +176,34 @@ namespace WinFormTest
             else
                 MessageBox.Show("你输入的密码是错误的");
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Int64 num=Int64.Parse(textBox6.Text);
+            MobileDao dao = new MobileDao();
+            //判断用户是否是停机用户或者是欠费用户
+            if (dao.checkState(num))
+            {
+                MessageBox.Show("你是停机或者欠费用户,我们不再对你进行月租扣费.");
+                return;
+            }
+
+            Mobile mobile=dao.getMobile(num);
+            TimeShedule timeShedule=new TimeShedule();
+            if (timeShedule.isPayTime(mobile.LastTimePayFor))
+            {
+                RuleDao rd = new RuleDao();
+                Int32 chargeid=rd.getId(num);
+                ChargeDao chargeDao = new ChargeDao();
+                Int32 chargePermonth=chargeDao.getCharge(chargeid).Chargepermonth;
+                dao.koufei(num, chargePermonth, 1);
+                MessageBox.Show("扣费成功");
+            }
+            else
+            {
+                MessageBox.Show("你上次扣费时间是:" + mobile.LastTimePayFor.ToString() + ",今天的日期是" + DateTime.Now.ToString() + ",所以扣费不成功.");
+
+            }
+        }
     }
 }

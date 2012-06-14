@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -72,8 +74,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -124,6 +124,22 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(266, 339);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(137, 21);
+            this.textBox7.TabIndex = 20;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(174, 345);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(83, 12);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "输入你的密码:";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -145,12 +161,13 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(653, 339);
+            this.button5.Location = new System.Drawing.Point(653, 94);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 25);
+            this.button5.Size = new System.Drawing.Size(119, 25);
             this.button5.TabIndex = 16;
-            this.button5.Text = "扣费处理";
+            this.button5.Text = "基本月租扣费处理";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -535,22 +552,6 @@
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "手机号码";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(174, 345);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(83, 12);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "输入你的密码:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(266, 339);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(137, 21);
-            this.textBox7.TabIndex = 20;
             // 
             // Form1
             // 

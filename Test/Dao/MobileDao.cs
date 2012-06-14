@@ -152,6 +152,8 @@ namespace Test.Model.Dao
                    .UniqueResult<Mobile>();
                 //扣费
                 p.Balance = p.Balance - chargepermonth;
+                if (p.Balance < 0)
+                    p.State = "off";
                 //修改扣费日期,下一次扣费将要在下一个月进行
                 p.LastTimePayFor = DateTime.Now;
                 //更新数据,提交修改后的内容
@@ -236,6 +238,27 @@ namespace Test.Model.Dao
                     .UniqueResult<Mobile>();
                 p.State = "stop";
                 trans.Commit();//提交
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
+        //修改密码
+        public void modifyPassword(Int64 num, string pwd)
+        {
+            trans = session.BeginTransaction();
+            try
+            {
+                var hql = @"from Mobile p
+                            where p.Mobilenumber=:phoneNumber";
+                Mobile p = session.CreateQuery(hql)
+                   .SetString("phoneNumber", num.ToString())
+                   .UniqueResult<Mobile>();
+
+                p.Password = pwd;
+                session.Update(p);
+                trans.Commit();
             }
             catch (Exception)
             {

@@ -49,6 +49,20 @@ namespace Test.Model.Dao
                 throw new Exception();
             }
         }
+        //根据用户基本套餐的id查询月租
+        public Charge getCharge(Int32 id)
+        {
+            trans = session.BeginTransaction();
+            try
+            {
+                Charge charge = session.CreateQuery("from Charge as c where c.Chargeid='" + id + "'").UniqueResult<Charge>();
+                return charge;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
         public int test()
         {
             trans = session.BeginTransaction();

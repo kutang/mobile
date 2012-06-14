@@ -185,21 +185,24 @@ namespace WinFormTest
             t = t + 1;//得到总的毫秒数 
             this.label4.Text = GetAllTime(t);
         }
-
+        //基本查询
         private void button3_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
             if (textBox3.Text == "") { MessageBox.Show("请输入你的手机号码", "wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
             CallRecordDao callRecallDao = new CallRecordDao();
             IEnumerable<CallRecord> list = callRecallDao.listCallRecord(Int64.Parse(textBox3.Text));
+            Int32 flag = 0;
             foreach(CallRecord record in list)
             {
                 richTextBox1.AppendText(record.FPhoneNumber.ToString()+"\t");
                 richTextBox1.AppendText(record.TPhoneNumber.ToString()+"\t");
                 richTextBox1.AppendText(record.T_from.ToString() + "\t");
                 richTextBox1.AppendText(record.T_to.ToString()+"\n");
+                flag = 1;
                 
             }
+            if (flag == 0) richTextBox1.AppendText("无记录");
         }
         //高级查询
         private void button4_Click(object sender, EventArgs e)
